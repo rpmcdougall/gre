@@ -34,7 +34,13 @@ param(
     }
 
     #Serialize and write out json
-
-    #Cleanup PSDrive
-
+    $jsonOut = $fileObjects | ConvertTo-JSON
+    $jsonOut
+    #Cleanup temp PSDrive
+    Try {
+        Remove-PSDrive $psDrive
+    }
+    Catch {
+        Write-Host "Failed to remove PSDrive..."
+    }
 }
