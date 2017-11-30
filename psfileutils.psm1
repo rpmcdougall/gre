@@ -2,7 +2,7 @@ function Get-FileListJSON {
 param(
    [string]$mountpoint
 )
-{
+
     #Connect mount point as PSDrive to work with local and network mounts (SMB)
     #Fetch directory listing into variable use error checking if mount is unavailable or invalid
     #Get-Childitem defaults to bytes
@@ -35,8 +35,8 @@ param(
     }
 
     #Serialize and write out json
-    $jsonOut = $fileObjects | ConvertTo-JSON
-    $jsonOut
+    $fileObjects | ConvertTo-JSON
+    
     #Cleanup temp PSDrive
     Try {
         Remove-PSDrive $psDrive
@@ -44,5 +44,4 @@ param(
     Catch {
         Write-Host "Failed to remove PSDrive..."
     }
-}
 }
