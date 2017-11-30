@@ -1,7 +1,8 @@
 function Get-FileListJSON {
 param(
    [string]$mountpoint
-{
+)
+
     #Connect mount point as PSDrive to work with local and network mounts (SMB)
     #Fetch directory listing into variable use error checking if mount is unavailable or invalid
     #Get-Childitem defaults to bytes
@@ -9,8 +10,7 @@ param(
         $psDrive = New-PSDrive -Name tempInspect -PSProvider FileSystem -Root $mountPoint -Description "Temporary mounting path for PSFileUtils Get-FileListJSON"
     }
     Catch{
-        Write-Host "Failed to add mountpoint as temporary PSDrive. Mount point is invalid or unavailable. Terminating script..."
-        exit
+        Write-Host "Failed to add mountpoint as temporary PSDrive. Mount point is invalid or unavailable. Terminating"
     }
     
     $fileList = Get-ChildItem tempInspect: -recurse 
@@ -34,7 +34,13 @@ param(
     }
 
     #Serialize and write out json
-
-    #Cleanup PSDrive
-
+    $fileObjects | ConvertTo-JSON
+    
+    #Cleanup temp PSDrive
+    Try {
+        Remove-PSDrive $psDrive
+    }
+    Catch {
+        Write-Host "Failed to remove PSDrive..."
+    }
 }
