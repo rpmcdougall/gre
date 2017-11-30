@@ -8,7 +8,7 @@ Currently it contains the Get-FileListJSON function. This function takes input o
 -Create a module folder in the default powershell modules directory
 ```
 From Administrator Powershell session...
-mkdir $PSHome\Modules\testerino
+mkdir $PSHome\Modules\PSFileUtils
 ```
 
 -Import the module
