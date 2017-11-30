@@ -47,3 +47,16 @@ Get-FileListJSON -mountpoint C:\go
    .
 ]
 ```
+
+# Unit Testing
+
+To perform unit tests when developing on this project run the following assuming psfileutils.Tests.ps1 is located in the same directory as psfileutils.psm1
+
+- Update Pester (from admin powershell session)
+```
+ Install-Module -Name Pester -Force -SkipPublisherCheck
+```
+- To run tests from Tests file location
+'''
+Invoke-Pester
+'''
