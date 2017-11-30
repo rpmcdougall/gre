@@ -57,6 +57,7 @@ To perform unit tests when developing on this project run the following assuming
  Install-Module -Name Pester -Force -SkipPublisherCheck
 ```
 - To run tests from Tests file location
-'''
+
+```
 Invoke-Pester
-'''
+```
