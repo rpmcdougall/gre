@@ -10,8 +10,7 @@ param(
         $psDrive = New-PSDrive -Name tempInspect -PSProvider FileSystem -Root $mountPoint -Description "Temporary mounting path for PSFileUtils Get-FileListJSON"
     }
     Catch{
-        Write-Host "Failed to add mountpoint as temporary PSDrive. Mount point is invalid or unavailable. Terminating script..."
-        exit
+        Write-Host "Failed to add mountpoint as temporary PSDrive. Mount point is invalid or unavailable. Terminating"
     }
     
     $fileList = Get-ChildItem tempInspect: -recurse 
