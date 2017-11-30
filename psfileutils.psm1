@@ -19,6 +19,20 @@ param(
     #For each item in mount point, create custom psobjects containing properties
     #for the filepath and file size in bytes and accumulate them into array
 
+    $fileObjects = @()
+
+    foreach($file in $fileList) {
+        #Check to see if current item is a file or directory as Get-ChildItem -recurse includes directories
+        if($file.PSIsContainer -eq $false){
+            $currentFile = New-Object PSObject
+            $currentFile | Add-Member -MemberType NoteProperty -Name FileName -Value $file.FullName
+            $currentFile | Add-Member -MemberType NoteProperty -Name SizeBytes -Value $file.Length
+
+            #Accumulate into array
+            $fileObjects += $currentFile
+        }
+    }
+
     #Serialize and write out json
 
     #Cleanup PSDrive
