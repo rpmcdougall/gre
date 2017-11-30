@@ -4,19 +4,27 @@ This Powershell Module is designed to contain commonly used functions to inspect
 
 Currently it contains the Get-FileListJSON function. This function takes input of a specified mountpoint and recursively gets the directory contents and outputs the name of the files and the size of the files in bytes. The output is presented in JSON format.
 
-##Installation
--Create a module folder in the default powershell modules directory
+## Installation
+
+For a more permanent installation...
+- Create a module folder in the default powershell modules directory
 ```
 From Administrator Powershell session...
 mkdir $PSHome\Modules\PSFileUtils
 ```
 
--Import the module
+- Import the module
 
 ```
 Import-Module PSFileUtils
 ```
+For testing
+- Import the module from any local location
+```
+Import-Module <Path to Module>/psfileutils.psm1
 
+ex. Import-Module F:/MyModules/psfileutils.psm1
+```
 
 ##Using Get-FileListJSON
 
