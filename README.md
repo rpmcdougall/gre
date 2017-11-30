@@ -26,7 +26,7 @@ Import-Module <Path to Module>/psfileutils.psm1
 ex. Import-Module F:/MyModules/psfileutils.psm1
 ```
 
-##Using Get-FileListJSON
+## Using Get-FileListJSON
 
 ```
 Get-FileListJSON -mountpoint <valid local windows path or SMB share>
