@@ -19,4 +19,9 @@ Describe 'Get-FileListJSON' {
         {Get-FileListJSON -mountpoint ThisArgumentIsInvalid } | Should -Throw
     }
 
+    It "Given valid input, no errors should be thrown" {
+        $pwd = pwd
+        {Get-FileListJSON -mountpoint $pwd} | Should -Not -Throw
+    }
+
 }
