@@ -45,3 +45,4 @@ param(
         Write-Host "Failed to remove PSDrive..."
     }
 }
+}
