@@ -1,6 +1,7 @@
 function Get-FileListJSON {
 param(
    [string]$mountpoint
+)
 {
     #Connect mount point as PSDrive to work with local and network mounts (SMB)
     #Fetch directory listing into variable use error checking if mount is unavailable or invalid
