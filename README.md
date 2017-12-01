@@ -59,6 +59,9 @@ Get-FileListJSON -mountpoint C:\go
 
 # Unit Testing
 
+Pester is installed by default on Windows 10. Other installation methods can be found here: https://github.com/pester/Pester
+Supported on Windows, MacOS, Linux
+
 To perform unit tests when developing on this project run the following assuming psfileutils.Tests.ps1 is located in the same directory as psfileutils.psm1
 
 - Update Pester (from admin powershell session)
