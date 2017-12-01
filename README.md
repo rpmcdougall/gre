@@ -74,3 +74,20 @@ To perform unit tests when developing on this project run the following assuming
 Invoke-Pester
 ```
 
+Example Test Output
+
+```
+Executing all tests in 'c:\Users\rpmcd\Documents\dev\gre\psfileutils.Tests.ps1' matching test name Get-FileListJSON
+
+Executing script c:\Users\rpmcd\Documents\dev\gre\psfileutils.Tests.ps1
+
+  Describing Get-FileListJSON
+    [+] Given no parameters, should run against current directory... 920ms
+    [+] When Completed no PSDrive named tempInspect should be present 140ms
+Failed to add mountpoint as temporary PSDrive. Mount point is invalid or unavailable. Terminating
+    [+] Given a invalid argument should terminate the script and throw error 80ms
+    [+] Given valid input, no errors should be thrown 26ms
+Tests completed in 1.17s
+Tests Passed: 4, Failed: 0, Skipped: 0, Pending: 0, Inconclusive: 0
+```
+
